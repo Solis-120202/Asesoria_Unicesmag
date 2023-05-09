@@ -2,7 +2,7 @@
     include("../config/connectionDB.php");
     // Get data
     $Code = $_POST['codde'];
-    $DniNum = $_POST['dni_num'];
+    $DniNum = md5($_POST['dni_num']);
     $fName = $_POST['f_name'];
     $lName = $_POST['l_name'];
     $celPhone = $_POST['cel_phone'];

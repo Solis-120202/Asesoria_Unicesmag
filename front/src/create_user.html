@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE USER</title>
+    <link rel="icon" type="image/x-icon" href="../icons/personas.png">
+    <script>
+      function redireccionar() {
+        var combo = document.getElementById("combo");
+        var opcionSeleccionada = combo.value;
+  
+        if (opcionSeleccionada === "") {
+          alert("POR FAVOR, SELECCIONA UNA OPCIÓN");
+        } else {
+          switch (opcionSeleccionada) {
+            case "estudiante":
+              window.location.href = "http://127.0.0.1/Asesorias_Unicesmag/front/src/create_user_student.html";
+              break;
+            case "docente":
+              window.location.href = "http://127.0.0.1/Asesorias_Unicesmag/front/src/create_teacher_user.html";
+              break;
+            case "coordinador":
+              window.location.href = "http://127.0.0.1/Asesorias_Unicesmag/front/src/create_coordinator_user.html";
+              break;
+          }
+        }
+      }
+    </script>
+</head>
+<body background="../images/Imagen de WhatsApp 2023-05-08 a las 19.05.31.jpg">
+  <br><br>
+    <label for="combo"><h1> SELECCIONA EL USUARIO A ESCOGER </h1></label>
+    <select id="combo">
+      <option value="">-- SELECCIONA UNA OPCIÓN --</option>
+      <option value="estudiante">ESTUDIANTE</option>
+      <option value="docente">DOCENTE</option>
+      <option value="coordinador">COORDINADOR</option>
+    </select>
+  <br><br>
+  <table>
+    <tr>
+      <td>
+        <button onclick="redireccionar()">SIGUIENTE</button>&nbsp;&nbsp;
+      </td>
+      <td>
+        <a href="http://127.0.0.1/Asesorias_Unicesmag/index.html""><img src="../icons/regreso.png" </a>
+      </td>
+    </tr>
+   </table>   
+</body>
+</html>

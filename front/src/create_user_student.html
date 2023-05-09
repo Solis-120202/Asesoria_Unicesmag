@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE STUDENT USER</title>
+    <link rel="icon" type="image/x-icon" href="../icons/personas.png">
+    <script>
+        function mostrarProgramas() {
+          // Obtener los valores seleccionados de los combo box
+          var facultad = document.getElementById("facultad").value;
+          var programa = document.getElementById("programa");
+    
+          // Mostrar las opciones correspondientes al programa seleccionado
+          var opcionesPrograma = programa.querySelectorAll("option");
+          for (var i = 0; i < opcionesPrograma.length; i++) {
+            var opcion = opcionesPrograma[i];
+            opcion.style.display = (opcion.getAttribute("data-facultad") === facultad || facultad === "") ? "block" : "none";
+          }
+    
+          // Habilitar o deshabilitar el segundo combo box según la selección
+          programa.disabled = (facultad === "");
+        }
+    
+        function validarFormulario() {
+          var facultad = document.getElementById("facultad").value;
+          var programa = document.getElementById("programa").value;
+    
+          if (facultad === "" || programa === "") {
+            alert("Por favor, seleccione una facultad y un programa.");
+            return false;
+          }
+        }
+      </script>
+</head>
+<body background="../images/Imagen de WhatsApp 2023-05-08 a las 19.05.31.jpg">
+    <form name="CreateUserForm" action="http://127.0.0.1/Asesorias_Unicesmag/back/src/create_user_student.php" method="post">
+    <center><h1>REGISTRO ESTUDIANTE</h1></center>
+    <table border="0" align="center">
+        <tr>
+            <td>
+                NOMBRES
+            </td>
+            <td>
+                <input type="text" name="nombres" required> 
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <label for="facultad">FACULTAD:</label>
+            </td>
+            <td>
+                <select id="facultad" onchange="mostrarProgramas()">
+                    <option value="">SELECCIONA UNA FACULTAD</option>
+                    <option value="facultad1">FAC. CIENCIAS SOCIALES Y HUMANAS</option>
+                    <option value="facultad2">FAC. CIENCIAS ADMINISTRATIVAS Y CONTABLES</option>
+                    <option value="facultad3">FAC. INGENIERÍA</option>
+                    <option value="facultad4">FAC. ARQUITECTURA Y BELLAS ARTES</option>
+                    <option value="facultad5">FAC. EDUCACIÓN</option>
+                </select>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                APELLIDOS
+            </td>
+            <td>
+                <input type="text" name="nombres" required> 
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <label for="programa">PROGRAMAS</label>
+            </td>
+            <td>
+                <select id="programa" disabled>
+                    <option value="">SELECCIONA UN PROGRAMA</option>
+                    <option value="programa1" data-facultad="facultad1">Derecho</option>
+                    <option value="programa2" data-facultad="facultad1">Psicologia</option>
+                    <option value="programa3" data-facultad="facultad2">Administración de Empresas</option>
+                    <option value="programa4" data-facultad="facultad2">Contaduría Pública</option>
+                    <option value="programa5" data-facultad="facultad2">Tecnología en Gestión Financiera</option>
+                    <option value="programa6" data-facultad="facultad2">Tecnología en Contabilidad y Finanzas</option>
+                    <option value="programa7" data-facultad="facultad2">Profesionalización en Contaduría Pública</option>
+                    <option value="programa8" data-facultad="facultad2">Profesionalización en Administración de Empresas</option>
+                    <option value="programa9" data-facultad="facultad3">Ingeniería Electrónica</option>
+                    <option value="programa10" data-facultad="facultad3">Ingeniería de Sistemas</option>
+                    <option value="programa11" data-facultad="facultad4">Diseño Gráfico</option>
+                    <option value="programa12" data-facultad="facultad4">Arquitectura</option>
+                    <option value="programa13" data-facultad="facultad5">Licenciatura en Educación Física</option>
+                    <option value="programa14" data-facultad="facultad5">Licenciatura en Educación Infantil</option>
+                    <option value="programa15" data-facultad="facultad5">Licenciatura en Química</option>
+                    <option value="programa16" data-facultad="facultad5">Licenciatura en Educación Preescolar</option>
+                </select>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                DNI
+            </td>
+            <td>
+                <input type="text" name="nombres" required> 
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                CORREO
+            </td>
+            <td>
+                <input type="email" name="email" required>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                CODIGO
+            </td>
+            <td>
+                <input type="text" name="nombres" required> 
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                CONTRASEÑA
+            </td>
+            <td>
+                <input type="password" name="passwd" required>
+            </td>
+        </tr>
+        <tr></tr>
+    </table> 
+   <br>
+    <center> 
+        <input type="submit" value="REGISTRARSE">&nbsp;&nbsp;
+        <button><a href="http://127.0.0.1/Asesorias_Unicesmag/index.html">CANCELAR</a></button><br><br>
+    </center>
+    <center>
+        <a href="http://127.0.0.1/Asesorias_Unicesmag/front/src/create_user.html""><img src="../icons/regreso.png" </a>
+    </center>
+    </form>   
+</body>
+</html>

@@ -4,7 +4,7 @@
     $fName = $_POST['f_name'];
     $lName = $_POST['l_name'];
     $Code = $_POST['codde'];
-    $DniNum = $_POST['dni_num'];
+    $DniNum = md5($_POST['dni_num']);
     $celPhone = $_POST['cel_phone'];
     $email = $_POST['email'];
 
