@@ -1,20 +1,29 @@
 <?php
     include("../config/connectionDB.php");
     // Get data
-    $Code = $_POST['codde'];
-    $DniNum = md5($_POST['dni_num']);
     $fName = $_POST['f_name'];
     $lName = $_POST['l_name'];
-    $celPhone = $_POST['cel_phone'];
-    $idProgram = $_POST['id_program'];
+    $DniNum = $_POST['dni_num'];
+    $Code = $_POST['codde'];
+    $idProgram = $_POST['id_programa'];
+    $email = $_POST['email'];
+    $pass = md5($_POST['passwd']);
 
-    $sql = "INSERT INTO ESTUDIANTE (codigo, dni, nombre, apellido, celular, id_programa) VALUES ('$Code', '$DniNum', '$fName', '$lName', '$celPhone', '$idProgram') ";
+    $sql1 = "INSERT INTO USUARIOS (email, password) VALUES ('$email', '$pass') ";
 
-    //$conn -> query($sql);
-
-    if($conn -> query($sql) === TRUE){
-        echo " ::: STUDENT HAS BEEN CREATED SUCCESSFULLY ::: ";
+    if($conn -> query($sql1) === TRUE){
+        $last_id = mysqli_insert_id($conn);
+        $sql2 = "INSERT INTO PERSONAS (nombres, apellidos, dni, id_usuario) VALUES ('$fName', '$lName', '$DniNum', '$last_id') ";
+        if($conn -> query($sql2) === TRUE){
+            $last_id = mysqli_insert_id($conn);
+            $sql3 = "INSERT INTO ESTUDIANTE (codigo, id_programa, id_persona) VALUES ('$Code', '$idProgram', '$last_id') ";
+            if($conn -> query($sql3) === TRUE){
+                echo "<script> alert('::: USER HAS BEEN CREATED SUCCESSFULLY :::')</script>";
+                header("refresh:0; url=http://127.0.0.1/Asesorias_Unicesmag/index.html");
+            }
+        }
     } else{
-        echo " ::: ERROR :" . $conn -> error . "<br>" . $sql ;
+        echo "<script> alert('::: USER WASN'T CREATED SUCCESSFULLY :::')</script>";
+        header("refresh:0; url=http://127.0.0.1/Asesorias_Unicesmag/front/src/create_user_student.html");
     }
 ?>

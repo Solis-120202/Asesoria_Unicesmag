@@ -8,13 +8,68 @@
 </head>
 <body background="../images/Imagen de WhatsApp 2023-05-08 a las 19.05.31.jpg">
     <form name="CreateUserForm" action="http://127.0.0.1/Asesorias_Unicesmag/back/src/create_coordinator_user.php" method="post">
-        <label>First Name</label><input type="text" name="f_name" required>&nbsp;
-        <label>Last Name</label><input type="text" name="l_name" required><br><br>
-        <label>Code</label><input type="text" name="codde" required>&nbsp;
-        <label>DNI</label><input type="text" name="dni_num" required><br><br>
-        <label>Cellphone</label><input type="text" name="cel_phone" required>&nbsp;
-        <label>E-mail</label><input type="email" name="email" required><br><br>
-        <button>REGISTER</button>
+        <center><h1>REGISTRO COORDINADOR</h1></center>
+    <table border="0" align="center">
+        <tr>
+            <td>
+                NOMBRES
+            </td>
+            <td>
+                <input type="text" name="f_name" required> 
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                CODIGO
+            </td>
+            <td>
+                <input type="text" name="codde" required> 
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                APELLIDOS
+            </td>
+            <td>
+                <input type="text" name="l_name" required>
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                CORREO
+            </td>
+            <td>
+                <input type="email" name="email" required>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                DNI
+            </td>
+            <td>
+                <input type="text" name="dni_num" required>
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                CONTRASEÑA
+            </td>
+            <td>
+                <input type="password" name="passwd" required>
+            </td>
+        </tr>
+        <tr></tr>
+    </table> 
+   <br> 
+    <center> 
+        <button>REGISTRAR</button>&nbsp;&nbsp;
+        <button><a href="http://127.0.0.1/Asesorias_Unicesmag/index.html">CANCELAR</a></button><br><br>
+    </center>
+    <center>
+        <a href="http://127.0.0.1/Asesorias_Unicesmag/front/src/create_user.html""><img src="../icons/regreso.png" </a>
+    </center>
     </form>
 </body>
 </html>

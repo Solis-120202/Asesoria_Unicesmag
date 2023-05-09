@@ -1,11 +1,11 @@
 <?php
     include("../config/connectionDB.php");
     // Get data
-    $Code = $_POST['codde'];
-    $password = md5($_POST['dni_num']);
+    $email = $_POST['email'];
+    $password = md5($_POST['password']);
 
     //Create Query
-    $sql = "SELECT * FROM DOCENTE WHERE codigo = '$Code' AND dni = '$password'";
+    $sql = "SELECT * FROM DOCENTE WHERE codigo = '$email' AND dni = '$password'";
     $result = $conn -> query ($sql);
 
     if( $result -> num_rows > 0) {
