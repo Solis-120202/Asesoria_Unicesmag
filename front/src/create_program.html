@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASESORIAS_UNICESMAG/CREAR_PROGRAMA</title>
+</head>
+<body background="../images/Imagen de WhatsApp 2023-05-08 a las 19.05.31.jpg">
+    <form name="CreateUserForm" action="http://127.0.0.1/Asesorias_Unicesmag/back/src/create_program.php" method="post">
+    <center><h1>AGREGAR PROGRAMA</h1></center>
+    <table border="0" align="center">
+        <tr>
+            <td>
+                PROGRAMA
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="text" name="p_name" required>
+            </td>
+            <td></td>
+        </tr>
+        <td>
+            <label for="facultad">FACULTAD:</label>
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+            <select id="programa" name="id_facul" required>
+                <option value="">SELECCIONA UNA FACULTAD</option>
+                <option value=1>FAC. CIENCIAS SOCIALES Y HUMANAS</option>
+                <option value=2>FAC. CIENCIAS ADMINISTRATIVAS Y CONTABLES</option>
+                <option value=3>FAC. INGENIERÍA</option>
+                <option value=4>FAC. ARQUITECTURA Y BELLAS ARTES</option>
+                <option value=5>FAC. EDUCACIÓN</option>
+            </select>
+        </td>
+        <td></td>
+    </tr>
+    </table>
+   <br> 
+    <center> 
+        <button>AGREGAR</button>&nbsp;&nbsp;
+        <button><a href="http://127.0.0.1/Asesorias_Unicesmag/index.html">CANCELAR</a></button>
+    </center><br>
+    <center>
+        <a href="http://127.0.0.1/Asesorias_Unicesmag/front/src/home.html"><img src="../icons/regreso.png" </a>
+    </center>
+    </form>
+</body>
+</html>

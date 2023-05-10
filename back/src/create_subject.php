@@ -1,16 +1,18 @@
 <?php
     include("../config/connectionDB.php");
     // Get data
-    $aName = $_POST['a_name'];
-    $Ccreditos = $_POST['c_creditos'];
+    $pName = $_POST['p_name'];
+    $Credi = $_POST['credi'];
 
-    $sql = "INSERT INTO ASIGNATURA (nombre, creditos) VALUES ('$aName', '$Ccreditos') ";
-
-    //$conn -> query($sql);
+    $sql = "INSERT INTO ASIGNATURA (nombre, creditos) VALUES ('$pName', '$Credi') ";
 
     if($conn -> query($sql) === TRUE){
-        echo " ::: SUBJECT HAS BEEN CREATED SUCCESSFULLY ::: ";
+        //echo " ::: PROGRAM HAS BEEN CREATED SUCCESSFULLY ::: ";
+        echo "<script> alert('::: SUBJECT HAS BEEN CREATED SUCCESSFULLY :::')</script>";
+        header("refresh:0; url=http://127.0.0.1/Asesorias_Unicesmag/front/src/create_subject.html");
     } else{
-        echo " ::: ERROR :" . $conn -> error . "<br>" . $sql ;
+        //echo " ::: ERROR :" . $conn -> error . "<br>" . $sql ;
+        echo "<script> alert('::: SUBJECT WASN'T CREATED SUCCESSFULLY :::')</script>";
+        header("refresh:0; url=http://127.0.0.1/Asesorias_Unicesmag/front/src/create_subject.html");
     }
-?>
+?>  

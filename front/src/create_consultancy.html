@@ -15,19 +15,10 @@
                 <label for="tipo-asesoria">TIPO DE ASESORIA</label>
             </td>
             <td>
-                <select id="tipo-asesoria" name="tipo_asesoria">
+                <select id="tipo-asesoria" name="t_aseso">
                     <option value=virtual>Virtual</option>
                     <option value=presencial>Presencial</option>
                 </select>
-            
-                <script>
-                    // Obtener el valor seleccionado cuando cambie la opción
-                    document.getElementById("tipo-asesoria").addEventListener("change", function() {
-                        var tipoAsesoriaSeleccionado = this.value;
-                        console.log("Tipo de Asesoría seleccionado: " + tipoAsesoriaSeleccionado);
-                        // Puedes realizar otras acciones con el valor seleccionado aquí
-                    });
-                </script>
             </td>
             <td></td>
             <td></td>
@@ -35,7 +26,7 @@
                 FECHA ASESORIA
             </td>
             <td>
-                <input type="date" name="dispo" required>
+                <input type="date" name="fecha" required>
             </td>
         </tr>
         <tr></tr>
@@ -44,53 +35,64 @@
                 <label for="elegir-asignatura">Elegir Asignatura</label>
             </td>
             <td>
-                <select id="elegir-asignatura" name="eleg_asigna">
+                <select id="elegir-asignatura" name="id_asig">
                     <option> ELIGA UNA OPCION</option>
-                    <option value=></option>
+                    <option value=2>Programación Avanzada</option>
                 </select>
             </td>
             <td></td>
             <td></td>
             <td>                
-                <label for="duracion">DURACIÓN</label>
+                HORA ASESORIA
             </td>
             <td>
-                <select id="duracion" name="duracion" required>
-                    <option value="5">5 minutos</option>
-                    <option value="10">10 minutos</option>
-                    <option value="15">15 minutos</option>
-                    <option value="30">30 minutos</option>
-                    <option value="60">1 hora</option>
-                </select>
-            
-                <script>
-                    // Obtener el valor seleccionado cuando cambie la opción
-                    document.getElementById("duracion").addEventListener("change", function() {
-                        var duracionSeleccionada = this.value;
-                        console.log("Duración seleccionada: " + duracionSeleccionada);
-                        // Puedes realizar otras acciones con el valor seleccionado aquí
-                    });
-                </script>
+                <input type="time" name="hora" required>               
             </td>
         </tr>
         <tr></tr>
         <tr>
             <td>
-                <label for="duracion">ELEGIR DOCENTE</label>
+                <label for="elegir-docente">ELEGIR DOCENTE</label>
             </td>
             <td>
-                <select id="elegir-docente" name="eleg_doce" required>
+                <select id="elegir-docente" name="id_docen" required>
                     <option> ELIGA UNA OPCION</option>
-                    <option value=></option>
+                    <option value=1>DOCENTE JOAN AYALA</option>
                 </select>
             </td>
             <td></td>
             <td></td>
             <td>
-                HORA ASESORIA
+                <label for="duracion">DURACIÓN</label>
             </td>
             <td>
-                <input type="time" name="dispo" required>
+                <select id="duracion" name="duraci" required>
+                    <option value=5>5 minutos</option>
+                    <option value=10>10 minutos</option>
+                    <option value=15>15 minutos</option>
+                    <option value=30>30 minutos</option>
+                    <option value=60>1 hora</option>
+                </select>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                ID ESTUDIANTE
+            </td>
+            <td>
+                <input type="text" name="id_estu" required>
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <label for="elegir-coordi">ELEGIR COORDINADOR</label>
+            </td>
+            <td>
+                <select id="elegir-coordi" name="id_coor" required>
+                    <option >ELIGE UNA OPCIÓN</option>
+                    <option value=1>COOR HECTOR</option>
+                </select>
             </td>
         </tr>
         <tr></tr>

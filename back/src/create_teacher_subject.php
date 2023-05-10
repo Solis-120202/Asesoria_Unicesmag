@@ -8,9 +8,11 @@
 
     //$conn -> query($sql);
 
-    if($conn -> query($sql) === TRUE){
-        echo " ::: TEACHER_SUBJECT HAS BEEN CREATED SUCCESSFULLY ::: ";
+    if( $result -> num_rows > 0) {
+        header("Location:http://127.0.0.1/Asesorias_Unicesmag/front/src/create_consultancy.html");
     } else{
-        echo " ::: ERROR :" . $conn -> error . "<br>" . $sql ;
+        //echo " ::: THE USER DOEN'T EXIST OR INVALID DATA :::" ;
+        echo "<script>alert('::: THE USER DOES NOT EXIST OR INVALID DATA :::') </script>";
+        header("refresh:0; url=http://127.0.0.1/Asesorias_Unicesmag/index.html");
     }
 ?>
